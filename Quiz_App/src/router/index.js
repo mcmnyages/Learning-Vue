@@ -1,6 +1,9 @@
-import { createRouter, createWebHistory } from "vue-router"
-import QuizesView from "@/views/QuizesView.vue"
-import QuizView from "@/views/QuizView.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import QuizesView from "@/views/QuizesView.vue";
+import QuizView from "@/views/QuizView.vue";
+import CardView from "@/components/Card.vue";
+import Answers from "@/components/Answers.vue";
+import About from "@/components/About.vue";
 
 const router = createRouter({
     history: createWebHistory(
@@ -8,13 +11,28 @@ const router = createRouter({
     routes: [{
             path: "/",
             name: "quizes",
-            component: QuizesView
+            component: QuizesView,
         },
         {
             path: "/quiz/:id",
             name: "quiz",
-            component: QuizView
-        }
-    ]
-})
-export default router
+            component: QuizView,
+        },
+        {
+            path: "/home",
+            name: "home",
+            component: CardView,
+        },
+        {
+            path: "/answers",
+            name: "answers",
+            component: Answers,
+        },
+        {
+            path: "/about",
+            name: "about",
+            component: About,
+        },
+    ],
+});
+export default router;

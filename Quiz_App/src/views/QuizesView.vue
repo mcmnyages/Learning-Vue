@@ -16,6 +16,7 @@ watch(search,()=>{
   <header>
     <h1>Quizes </h1>
     <input type="text" v-model.trim="search"  placeholder="Search...">
+  
   </header>
   <div class="options-container">
    <Card v-for="quiz in quizes" :key="quiz.id" :quiz="quiz"/>
@@ -30,7 +31,7 @@ watch(search,()=>{
 </div>
 </template>
 
-<style>
+<style scoped>
 
 header{
   margin-top: 30px;
